@@ -14,5 +14,11 @@ module Types
     def game(id:)
       ::Game.find(id)
     end
+
+    field :games, [Types::Game::GameType], null: false, description: "Fetch all games"
+
+    def games
+      ::Game.all
+    end
   end
 end
